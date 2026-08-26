@@ -1,0 +1,58 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        //marka gruplandirmasi
+        String marka1 = "Apple";
+        String marka2 = "Samsung";
+        String marka3 = "Honor";
+        String marka4 = "Vivo";
+        String marka123 = "Apple | Samsung | Honor";
+        String marka23 = "Samsung | Honor";
+        String marka34 = "Honor | Vivo";
+        String marka234 = "Samsung | Honor | Vivo";
+        String marka12 = "Apple | Samsung";
+        String tumMarkalar = "Apple | Samsung | Honor | Vivo";
+        
+        //telefon stok durumu kontrol
+        boolean marka1StokVarmi = true;
+        boolean marka2StokVarmi = true;
+        boolean marka3StokVarmi = true;
+        boolean marka4StokVarmi = true;
+        boolean marka123StokVarmi = marka1StokVarmi && marka2StokVarmi && marka3StokVarmi;
+        boolean marka12StokVarmi = marka1StokVarmi && marka2StokVarmi;
+        boolean marka432StokVarmi = marka1StokVarmi && marka2StokVarmi && marka3StokVarmi;
+        boolean marka43StokVarmi = marka3StokVarmi && marka4StokVarmi;
+        boolean marka234StokVarmi = marka2StokVarmi && marka3StokVarmi && marka4StokVarmi;
+        boolean hepsiStokVarmi = marka1StokVarmi && marka2StokVarmi && marka3StokVarmi && marka4StokVarmi;
+        
+        //telefon fiyatlari ve butcemiz
+        int marka1Fiyati = 2000;
+        int marka2Fiyati = 1000;
+        int marka3Fiyati = 500;
+        int marka4Fiyati = 250;
+        int marka123Fiyati = marka1Fiyati + marka2Fiyati + marka3Fiyati;
+        int marka23Fiyati = marka2Fiyati + marka3Fiyati;
+        int marka234Fiyati = marka2Fiyati + marka3Fiyati + marka4Fiyati;
+        int marka34fiyati = marka3Fiyati + marka4Fiyati;
+        int toplamTelefonFiyati = marka1Fiyati + marka2Fiyati + marka3Fiyati + marka4Fiyati;
+        int paraniz = 4000;
+        
+        //stok durumu & paranin yetip yetmedigi durumu
+        if (paraniz >= toplamTelefonFiyati && hepsiStokVarmi) {
+            System.out.println("tercih edebileceginiz markalar");
+            System.out.println("------------------------------");
+            System.out.println(tumMarkalar);
+        } else if (paraniz >= marka123Fiyati && marka123StokVarmi) {
+            System.out.println("tercih edebileceginiz markalar");
+            System.out.println("------------------------------");
+            System.out.println(marka123);
+        } else if (paraniz >= marka234Fiyati && marka234StokVarmi) {
+            System.out.println("tercih edebileceginiz markalar");
+            System.out.println(marka234);
+        } else if (paraniz >= marka34fiyati && marka234StokVarmi) {
+            System.out.println("tercih edebileceginiz markalar");
+            System.out.println(marka34);
+        }
+    }
+}
+
