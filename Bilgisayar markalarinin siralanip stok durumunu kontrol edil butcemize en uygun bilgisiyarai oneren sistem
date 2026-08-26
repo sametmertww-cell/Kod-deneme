@@ -1,0 +1,56 @@
+# Kod-denemepublic class Main {
+    public static void main(String[] args) {
+        
+        // Bilgisayar sistem gruplandırması
+        String sistem1 = "Asus ROG (İş İstasyonu)";
+        String sistem2 = "MSI Gaming (Oyuncu Bilgisayarı)";
+        String sistem3 = "Lenovo ThinkPad (Ofis Bilgisayarı)";
+        String sistem4 = "HP Slim (Ev Bilgisayarı)";
+        
+        String sistem123 = sistem1 + " | " + sistem2 + " | " + sistem3;
+        String sistem234 = sistem2 + " | " + sistem3 + " | " + sistem4;
+        String tumSistemler = sistem1 + " | " + sistem2 + " | " + sistem3 + " | " + sistem4;
+        
+        // Stok durumu kontrolü
+        boolean sistem1StokVarmi = true;
+        boolean sistem2StokVarmi = true;
+        boolean sistem3StokVarmi = true;
+        boolean sistem4StokVarmi = true;
+        
+        boolean hepsiStokVarmi = sistem1StokVarmi && sistem2StokVarmi && sistem3StokVarmi && sistem4StokVarmi;
+        boolean sistem123StokVarmi = sistem1StokVarmi && sistem2StokVarmi && sistem3StokVarmi;
+        boolean sistem234StokVarmi = sistem2StokVarmi && sistem3StokVarmi && sistem4StokVarmi;
+        
+        // Sistem fiyatları ve bütçe
+        int sistem1Fiyati = 40000;
+        int sistem2Fiyati = 25000;
+        int sistem3Fiyati = 15000;
+        int sistem4Fiyati = 10000;
+        
+        int toplamSistemFiyati = sistem1Fiyati + sistem2Fiyati + sistem3Fiyati + sistem4Fiyati;
+        int sistem123Fiyati = sistem1Fiyati + sistem2Fiyati + sistem3Fiyati;
+        int sistem234Fiyati = sistem2Fiyati + sistem3Fiyati + sistem4Fiyati;
+        
+        int paraniz = 55000;
+        
+        // Bütçe ve stok kontrolü (En pahalı paketten en ucuza doğru)
+        if (paraniz >= toplamSistemFiyati && hepsiStokVarmi) {
+            System.out.println("Tercih edebileceğiniz bilgisayarlar (Tüm Paket):");
+            System.out.println("----------------------------------------------");
+            System.out.println(tumSistemler);
+            
+        } else if (paraniz >= sistem123Fiyati && sistem123StokVarmi) {
+            System.out.println("Tercih edebileceğiniz bilgisayarlar (Üst Segment):");
+            System.out.println("----------------------------------------------");
+            System.out.println(sistem123);
+            
+        } else if (paraniz >= sistem234Fiyati && sistem234StokVarmi) {
+            System.out.println("Tercih edebileceğiniz bilgisayarlar (Fiyat/Performans Segmenti):");
+            System.out.println("----------------------------------------------");
+            System.out.println(sistem234);
+            
+        } else {
+            System.out.println("Bütçenize veya stok durumuna uygun bilgisayar paketi bulunamadı.");
+        }
+    }
+}
