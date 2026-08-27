@@ -1,0 +1,83 @@
+import java.util.Scanner; // Klavye kütüphanesini içeri aldık
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // burasi rehberlik icin aldigimiz bilgilerdir
+        System.out.println("Rehberlik Basvuru Formuna Hosgeldiniz...");
+
+        // isim kismi
+        System.out.println("isminizi yaziniz.");
+        String isim = scanner.nextLine();
+
+        // oyun ismi
+        System.out.println("oyun ici isminizi yaziniz.");
+        String oyunIsmi = scanner.nextLine();
+
+        // discord ismi ve zorunlulugu hakkinda hatirlatma
+        System.out.println("Discord rehberlik icin zorunludur!");
+        System.out.println("Discord isminizi yaziniz.");
+        String discordIsmi = scanner.nextLine();
+
+        // yasini aldigimiz kisim ve zorunlulugunu hatirlattigimiz bolum
+        System.out.println("en dusuk rehberlik yasi 18 dir!");
+        System.out.println("yasinizi yaziniz sadece rakam yaziniz.");
+        int yas = scanner.nextInt();
+        //ekstra isim2 ekliyerek  sonraki soruyu atlamasini engelliyoruz
+        String isim2 = scanner.nextLine();
+
+        //nekadar aktiflik yapabilecegini soruyoruz bu kisimda
+        System.out.println("haftada kac saat aktiflik yapabilirsiniz?");
+        System.out.println("en az 10 saat aktiflik gerekmektedir.");
+        System.out.println("sadece rakam yaziniz...");
+        int aktiflikSuresi = scanner.nextInt();
+
+        //daha once yetkililik deneyiminiz oldumu sorusunu sordugumuz kisim
+        System.out.println("Daha onceden yetkililik deneyiminiz oldumu?");
+        String yetkililikDeneyimi = scanner.nextLine();
+        //ekstra yetkilideneyimi ekliyerek aradaki kod bozuklugunu yani atlamasini engelliyoruz
+        String yetkililikDeneyimi2 = scanner.nextLine();
+
+
+        //neden sunucumuzda rehber olmak istiyorsunuz diye bolum
+        System.out.println("neden sunucumuzda rehber olmak istiyorsunuz?");
+        String nedenSunucumuzdaRehberOlmakIstiyorsunuz = scanner.nextLine ();
+
+        //rehber olunca katacagi katkilar hakkinda soru soruyoruz
+        System.out.println("rehber olunca sunucumuza ne gibi katkida bulunacaginizi dusunuyorsunuz?");
+        String rehberOluncaNeGibiKatkilarBulanacaginiziDusunuyorsunuz = scanner.nextLine();
+
+        //aktif olarak yetkili olan bir tanidigi yada iyi anlastigi bir kisi varmi sorusu
+        System.out.println("Aktif olarak yetkili tanidiginiz veya iyi anlastiginiz kisiler varmi? varsa yaziniz...");
+        String aktifYetkiliTanidiginizVarmi = scanner.nextLine ();
+
+        //kriz yonetim sorusu
+        System.out.println("Sunucumuzda iki oyuncu tartismaya baslarsa ne yaparsiniz?");
+        String krizYonetim = scanner.nextLine();
+
+        //komut bilgi testi sorusu
+        System.out.println("Oyun ici komut bilginize 10 uzerinden kac puan verirsiniz?");
+        String komutBilgisi = scanner.nextLine();
+
+        //burada if else ye geciyoruz soru sorma kismi bitti en son sonuclari gosterecegiz
+            System.out.println("Sayin " +  isim  +  " Basvuru Sonucunuzu Assagida Gorebilirsiniz.");
+            System.out.println("-------------------------------------------------------------------");
+        if (yas >= 18 && aktiflikSuresi >= 10) {
+            System.out.println("yasiniz rehberlik basvurusu icin uygundur " + yas);
+            System.out.println("Aktiflik sureniz rehberlik icin uygundur " + aktiflikSuresi);
+            System.out.println("Diger girdiniz bilgiler rehber alim ekibimiz tarafindan incelenecektir...");
+            System.out.println("Sonucunuzu Discord sunucumuz uzerinden gorebilirsiniz.\n");
+        } else if (yas < 18 && aktiflikSuresi < 10) {
+            System.out.println("==Yasiniz ve Aktiflik sureniz yetmedigi icin basvurunuz reddedildi==");
+            System.out.println("==istenilen gereksinimleri karsiladiginiz zaman tekrardan basvuruda bulunabilirsiniz==");
+        } else if(aktiflikSuresi < 10) {
+            System.out.println("==Aktiflik sureniz yetmedigi icin basvurunuz reddedildi==");
+            System.out.println("==istenilen gereksinimleri karsiladiginiz zaman tekrardan basvuruda bulunabilirsiniz==");
+        }else {
+            System.out.println("==Yasiniz yetmedigi icin basvurunuz reddedildi==");
+            System.out.println("==istenilen gereksinimleri karsiladiginiz zaman tekrardan basvuruda bulunabilirsiniz==");
+        }
+    }
+}
