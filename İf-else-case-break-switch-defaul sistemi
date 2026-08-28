@@ -1,0 +1,87 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Oyuncunun mevcut bakiyesi
+        int bakiye = 200; 
+
+        System.out.println("=== VIP SATIN ALMA MENÜSÜ ===");
+        System.out.println("Mevcut Bakiyeniz: " + bakiye + " TL\n");
+        System.out.println("1 VIP | 5 hediye spawner | /ec /feed | Fiyat = 50TL");
+        System.out.println("2 VIP+ | 10 hediye spawner | /fly /ec /feed | Fiyat = 100TL");
+        System.out.println("3 VIP++ | 20 spawner | 10 kasa anahtarı | Fiyat = 200TL");
+        System.out.println("4 VIP+++ | 35 spawner | 25 kasa anahtarı | Fiyat = 400TL\n");
+
+        System.out.print("Lütfen Satın Almak İstediğiniz VIP Numarasını Yazınız (1-4): ");
+        int vip = scanner.nextInt();
+
+        switch (vip) {
+
+            case 1:
+                int fiyat1 = 50;
+                if (bakiye >= fiyat1) {
+                    bakiye = bakiye - fiyat1;
+                    System.out.println("\nVIP rütbesini satın aldınız!");
+                    System.out.println("========= Aldığınız Hediyeler ============");
+                    System.out.println("=========== 5 Adet Spawner ===============");
+                    System.out.println("Kalan Bakiyeniz: " + bakiye + " TL");
+                } else {
+                    System.out.println("\nYetersiz Bakiye! Gereken Miktar: " + fiyat1 + " TL | Mevcut Bakiyeniz: " + bakiye + " TL");
+                }
+                break;
+
+            case 2:
+                int fiyat2 = 100;
+                if (bakiye >= fiyat2) {
+                    bakiye = bakiye - fiyat2;
+                    System.out.println("\nVIP+ rütbesini satın aldınız!");
+                    System.out.println("=========== Aldığınız Hediyeler ============");
+                    System.out.println("============= 10 Adet Spawner ==============");
+                    System.out.println("Kalan Bakiyeniz: " + bakiye + " TL");
+                } else {
+                    System.out.println("\nYetersiz Bakiye! Gereken Miktar: " + fiyat2 + " TL | Mevcut Bakiyeniz: " + bakiye + " TL");
+                }
+                break;
+
+            case 3:
+                int fiyat3 = 200;
+                if (bakiye >= fiyat3) {
+                    bakiye = bakiye - fiyat3;
+                    System.out.println("\nVIP++ rütbesini satın aldınız!");
+                    System.out.println("========== Aldığınız Hediyeler =============");
+                    System.out.println("== 20 Adet Spawner | 10 Adet Kasa Anahtarı ==");
+                    System.out.println("Kalan Bakiyeniz: " + bakiye + " TL");
+                } else {
+                    System.out.println("\nYetersiz Bakiye! Gereken Miktar: " + fiyat3 + " TL | Mevcut Bakiyeniz: " + bakiye + " TL");
+                }
+                break;
+
+            case 4:
+                int fiyat4 = 400;
+                if (bakiye >= fiyat4) {
+                    bakiye = bakiye - fiyat4;
+                    System.out.println("\nVIP+++ rütbesini satın aldınız!");
+                    System.out.println("=========== Aldığınız Hediyeler =============");
+                    System.out.println("== 35 Adet Spawner | 25 Adet Kasa Anahtarı ==");
+                    System.out.println("Kalan Bakiyeniz: " + bakiye + " TL");
+                } else {
+                    System.out.println("\nYetersiz Bakiye! Gereken Miktar: " + fiyat4 + " TL | Mevcut Bakiyeniz: " + bakiye + " TL");
+                }
+                break;
+
+            default:
+                System.out.println("\nLütfen geçerli bir sayı giriniz! (1-4)");
+                System.out.println("Sadece Rakam Yazınız!");
+                break;
+
+        }
+
+        scanner.close();
+
+    }
+
+}
