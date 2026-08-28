@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        //satin alabilecegi vip secenekleri & fiyatlari & ozelliklerini sundugumuz bolum
+
+        System.out.println(" Vip satin alma menusune geldiniz");
+
+        System.out.println(" Assagida satin alabileceginiz secenekler bulunmaktadir");
+
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
+
+        System.out.println("1 VIP | 5 hediye spawner | /ec /feed | Fiyat = 50TL |\n");
+
+        System.out.println("2 VIP+ | 10 hediye spawner | /fly /ec /feed /sethome 3 ev hakki /order 10 siparis verme hakki /ah 10 item satisa koyma hakki | Fiyat = 100TL |\n");
+
+        System.out.println("3 VIP++ | 20 hediye spawner | 10 hediye kasa anahtari | /fly /feed /ec /order /sethome 5 ev hakki 20 siparis verme hakki /ah 20 item satisa koyma hakki | Fiyat = 200TL |\n");
+
+        System.out.println("4 VIP+++ | 35 hediye spawner | 25 hediye kasa anahtari | /fly /feed /ec /sethome 10 ev hakki /order 30 siparis verme hakki /ah 30 item satisa koyma hakki | Fiyat = 400TL | \n");
+
+        System.out.println("Lutefn Satin Almak Istediginiz Vip Sayisini Yaziniz (1-4)");
+
+        //hangi sekilde vip yazilirsa yazilsin ayni sekilde vip haline getiren komuttur .toLowerCase(); geriye kalan kisim vip secme kismi
+
+        int vip = scanner.nextInt();
+
+        switch (vip) {
+
+            case 1:
+
+                System.out.println("VIP rutbesini satin aldiniz Fiyat = 50TL");
+                System.out.println("=========Aldiginiz Hediyeler============");
+                System.out.println("===========5 Adet Spawner===============");
+                break;
+
+            case 2:
+
+                System.out.println("VIP+ rutbesini satin aldiniz Fiyat = 100TL");
+                System.out.println("===========Aldiginiz Hediyeler============");
+                System.out.println("=============10 Adet Spawner==============");
+
+                break;
+
+            case 3:
+
+                System.out.println("VIP++ rutbesini satin aldiniz Fiyat = 200TL");
+                System.out.println("==========Aldiginiz Hediyeler==============");
+                System.out.println("==20 Adet Spawner | 10 Adet Kasa Anahtari==");
+
+                break;
+
+            case 4:
+
+                System.out.println("VIP+++ rutbesini satin aldiniz Fiyat = 400TL");
+                System.out.println("===========Aldiginiz Hediyeler==============");
+                System.out.println("==35 Adet Spawner |  25 Adet Kasa Anahtari==");
+
+                break;
+
+            default:
+
+                System.out.println("Lutfen gecerli sayi giriniz! (1-4)");
+                      System.out.println("Sadece Rakam Yaziniz!");
+
+                break;
+
+        }
+
+        scanner.close();
+
+    }
+
+}
