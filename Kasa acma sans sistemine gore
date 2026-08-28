@@ -1,1 +1,51 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.print("Envanterinizde bulunan anahtar sayisini giriniz = ");
+        // Burada anahtar sayisini istiyoruz ancak sunucuda direkt inv den bilgiyi cekecegiz ona gorede sansina gore odul alacaktir...
+        int anahtar = scanner.nextInt(); 
+
+        // Oyuncu anahtari varmi kontrol amac 0 dan buyuk olmasidir
+        if (anahtar <= 0) {
+            System.out.println("Hiç anahtarınız yok! Kasa açamazsınız.");
+        } else {
+            System.out.println("\n=== KASA AÇMA İŞLEMİ BAŞLADI ===");
+
+            // Anahtar 0 degilse calisan dongudur zaten anahtar 0 ise yukarida uyari verip duruyor.
+            for (int i = 1; anahtar > 0; i++) {
+                
+                // Her kasa actiginda eksiltmesi icin
+                anahtar--; 
+
+                // 1 ile 6 arasında rastgele şans seçimi
+                int sans = random.nextInt(6) + 1; 
+
+                // Sansa bagli olarak kazandigi odulu ekrana yansitiyoruz
+                // Kalan anahtar sayisini yansitmayida ekledim
+                if (sans == 1) {
+                    System.out.println(i + ". Acilis: [SIK] 64x Demir | Kalan Anahtar: " + anahtar);
+                } else if (sans == 2) {
+                    System.out.println(i + ". Acilis: [COP] 64x Toprak | Kalan Anahtar: " + anahtar);
+                } else if (sans == 3) {
+                    System.out.println(i + ". Acilis: [NADIR] 16x Elmas | Kalan Anahtar: " + anahtar);
+                } else if (sans == 4) {
+                    System.out.println(i + ". Acilis: [ASIL] 32x Netherite | Kalan Anahtar: " + anahtar);
+                } else if (sans == 5) {
+                    System.out.println(i + ". Acilis: [DESTANSI] Netherite Zirh | Kalan Anahtar: " + anahtar);
+                } else if (sans == 6) {
+                    System.out.println(i + ". Acilis: [EFSANEVI] 32x Netherite Blok | Kalan Anahtar: " + anahtar);
+                }
+            }
+
+            System.out.println("\nBütün anahtarlarınız bitti!");
+        }
+
+        scanner.close();
+    }
+}
 
