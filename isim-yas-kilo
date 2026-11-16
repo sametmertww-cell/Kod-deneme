@@ -1,0 +1,40 @@
+public class MyClass {
+  public static void main(String args[]) {
+      
+    // kisilerin isimleri
+    String kisi1isim = "Samet";
+     String kisi2isim = "Mehmet";
+      String kisi3isim = "Leyla";
+      
+    // kisilerin yaslari
+    int kisi1yas  = 25;
+    int kisi2yas = 30;
+    int kisi3yas = 20;
+    
+    // kisilerin kilolari
+    int kisi1kilo = 75;
+    int kisi2kilo = 80;
+    int kisi3kilo = 60;
+    
+    // ekrana yazdirma
+    System.out.println ("Kisi 1'in Bilgileri: ");
+    System.out.println ("Isim = " + kisi1isim);
+    System.out.println ("Yas = " + kisi1yas);
+    System.out.println ("Kilo = " + kisi1kilo + "KG");
+    
+    System.out.println("----------------------");
+    
+    System.out.println ("Kisi 2'nin Bilgileri");
+    System.out.println ("Isim = " + kisi2isim);
+    System.out.println ("Yas = " + kisi2yas);
+    System.out.println ("Kilo = " + kisi2kilo + "KG");
+    
+    System.out.println("----------------------");
+    
+    System.out.println ("Kisi 3'nin Bilgileri");
+    System.out.println ("Isim = " + kisi3isim);
+    System.out.println ("Yas = " + kisi3yas);
+    System.out.println ("Kilo = " + kisi3kilo + "KG");
+    
+  }
+}
