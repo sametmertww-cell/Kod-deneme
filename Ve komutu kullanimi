@@ -1,0 +1,22 @@
+public class SunucuKontrol {
+    public static void main(String[] args) {
+    
+    //oyuncu bilgileri
+    String oyuncuIsmi = "TeenRabbit";
+    int oyuncuSeviyesi = 1000;
+    boolean vipMi = true;
+    
+    //oyuncu bilgileri ekrana yazilimi
+    System.out.println("Oyuncu = " + oyuncuIsmi + "\n Seviye = " + oyuncuSeviyesi);
+    
+    //if else blogu
+    if (oyuncuSeviyesi >= 1000 && vipMi) {
+        System.out.print("Ozel Markete Giris Izni Verildi");
+    } else {
+        System.out.print("Ozel Market Kapali");
+    }
+    }
+}
+
+    
+   
