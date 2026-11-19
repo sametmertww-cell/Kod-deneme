@@ -1,0 +1,28 @@
+public class SunucuKontrol {
+    public static void main(String[] args) {
+    
+    //oyuncu bilgileri
+    String oyuncuIsmi = "TeenRabbit";
+    int oyuncuSeviyesi = 1000;
+    boolean vipMi = true;
+    double oyuncuBakiyesi = 2500.4;
+    
+    //oyuncu bilgilerini ekrana yazma
+    System.out.println ("Oyuncu = " + oyuncuIsmi + "\n Seviye = " + oyuncuSeviyesi + "\n Bakiye = " + oyuncuBakiyesi);
+    
+    //vip olup olmadigini ve imkanlaredan ona gore yararlanip yararlanamayacagini gosteriyoruz
+    if (vipMi) {
+        System.out.println("VIP Oldugunuz Icin  Ek Imkanlardan Yararlanabilirsiniz ");
+    } else {
+        System.out.println("VIP Olmadiginiz Icin  Ek Imkanlardan Yararlanamayacaksiniz");
+    
+        
+       } if (oyuncuSeviyesi >= 30 ) {
+            System.out.print("Boss Odasina ve Pvp Arenasina Girebilirsiniz");
+        } else if (oyuncuSeviyesi >= 10 ) {
+            System.out.print("Pvp Arenasina Girebilirsiniz");
+        } else {
+            System.out.print("Arenalara Giremessiniz Seviyeniz Yetersiz!");
+        }
+    }
+}
